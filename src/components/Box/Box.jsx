@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import "./Box.css";
 
 
 class Box extends Component {
@@ -12,5 +13,11 @@ class Box extends Component {
         )
     }
 }
+
+Box.propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string.isRequired,
+}
+
 
 export default Box;

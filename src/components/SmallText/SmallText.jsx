@@ -17,6 +17,9 @@ SmallText.propTpyes = {
     content: PropTpyes.string.isRequired,
     className: PropTpyes.string.isRequired,
 }
+SmallText.defaultProps = {
+    className: "small-text",
+}
 
 export default SmallText;
 
