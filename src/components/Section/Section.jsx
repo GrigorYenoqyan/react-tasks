@@ -14,7 +14,7 @@ class Section extends Component {
 }
 Section.propTypes = {
     children: PropTypes.node.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
 }
 
 

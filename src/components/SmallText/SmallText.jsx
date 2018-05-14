@@ -15,7 +15,7 @@ class SmallText extends Component {
 
 SmallText.propTpyes = {
     content: PropTpyes.string.isRequired,
-    className: PropTpyes.string.isRequired,
+    className: PropTpyes.string,
 }
 SmallText.defaultProps = {
     className: "small-text",
