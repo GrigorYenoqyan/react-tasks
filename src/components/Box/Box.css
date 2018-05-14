@@ -1,0 +1,30 @@
+.box-container { 
+    overflow: hidden;
+}
+.box {
+    float: left;
+    width:19%;
+    margin: 3%;
+}
+.box:last-child {
+    clear:right;
+}
+.box-icon {
+    font-size: 30px;
+}
+.box-name {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 17px;
+    color: #9eaeaf;
+    margin-bottom: 0;
+}
+.box-price {
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+.box-desc {
+    padding: 0;
+    font-size: 11px;
+}

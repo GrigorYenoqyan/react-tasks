@@ -14,7 +14,7 @@ class Heading extends Component {
 
 Heading.propTypes = {
     label: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
 };
 
 export default Heading;
