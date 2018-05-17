@@ -37,8 +37,16 @@ class ListItem extends Component {
     
     render() {
         const {children, className} = this.props;
-        let newClass = this.state.isHovered ? `task-hover` : '';
-        newClass = this.state.wasDone ? `${newClass} task-done` : newClass;
+        let newClass = "";
+
+        if (this.state.isHovered) {
+            newClass = "task-hover";
+        }
+
+        if (this.state.wasDone) {
+            newClass += " task-done";
+        }
+
         return (
             <li 
                 className={`${className} ${newClass}`} 
@@ -56,6 +64,10 @@ class ListItem extends Component {
 ListItem.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
+}
+
+ListItem.defaultProps = {
+    className: "",
 }
 
 export default ListItem;

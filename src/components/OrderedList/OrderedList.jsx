@@ -26,4 +26,8 @@ OrderedList.propTypes = {
     className: PropTypes.string,
 }
 
+OrderedList.defaultProps = {
+    className: '',
+}
+
 export default OrderedList;
