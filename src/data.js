@@ -1,9 +1,26 @@
-export const tasks = [
-    "Wake up at 07:00.", 
-    "Leave for a work at 08:30.", 
-    "Meeting at 11:00.", 
-    "12:00-13:00 lunchtime.", 
-    "18:15 shopping.", 
-    "Dinner with friends at 19:20.", 
-    "Finish freelance work until 01:00."
+export const students = [
+    {
+        id: 1,
+        name: "Student_1",
+        age: 21,
+        grade: 87,
+    },
+    {
+        id: 2,
+        name: "Student_2",
+        age: 22,
+        grade: 88,
+    },
+    {
+        id: 3,
+        name: "Student_3",
+        age: 24,
+        grade: 91,
+    },
+    {
+        id: 4,
+        name: "Student_4",
+        age: 23,
+        grade: 93,
+    }
 ];
