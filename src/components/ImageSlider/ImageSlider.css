@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.main-container {
+    width: 78%;
+    margin: 0 auto;
+    padding: 33px;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+.left-section {
+    width:10%;
+    float:left;
+}
+.right-section {
+    width:10%;
+    float:right;
+    clear: right;
+}
+.main-section {
+    width:80%;
+    float:left;
+    height:200px;
+}
+.right-arrow, .left-arrow {
+    font-size: 40px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.image-container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.images {
+    width: 140px;
+    height: 140px;
+    margin:20px;
+}
+
+.current {
+    width: 180px;
+    height: 180px;
+    margin:20px;
+}
