@@ -10,14 +10,19 @@ class BookLibrary extends Component {
         super(props);
         this.state = {
             data: null,
-            found: 0,
+            found: null,
             loading: false,
         }
     }
 
-    searchBooks = (input) => {
+    addIdToObject = (arr) => {
+        arr.forEach((el, index) => el.id = index);
+    }
+
+    getBooksData = (input) => {
         this.setState({
-            data: [],
+            data: null,
+            found: null,
             loading: true,
         })
 
@@ -25,9 +30,10 @@ class BookLibrary extends Component {
         fetch(`http://openlibrary.org/search.json?q=${searchText}`)
             .then((response) => response.json())
             .then((data) => {
+                this.addIdToObject(data.docs);
                 this.setState({
                     data: data.docs,
-                    found: data,
+                    found: data.numFound,
                     loading: false,
                 })
             })
@@ -36,7 +42,6 @@ class BookLibrary extends Component {
 
     render() {
         const { data, found, loading } = this.state;
-        console.log(data);
         return (
             <div className="main-container">
                 {
@@ -45,10 +50,10 @@ class BookLibrary extends Component {
                     null
                 }
                 <SearchInput 
-                    handleClick={this.searchBooks} 
+                    handleClick={this.getBooksData} 
                 />
                 {
-                    found ? <p>{found.numFound} found</p> : null
+                    data ? <p className="count">{found} found</p> : null
                 }
                 {
                     data && data.length ? 

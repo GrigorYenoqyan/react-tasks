@@ -1,41 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 import BookRow from "./BookRow";
 
-class BookTable extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            result: [],
-        }
-    }
+const BookTable = ({ data }) => {
+    return (
+        <div className="table-section">
+            <table className="book-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author Name</th>
+                        <th>First publish year</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody className="book-body">
+                    {
+                        data.map(row => <BookRow data={row} key={row.id} />)
+                    }
+                </tbody>
+            </table>
+        </div>
+    );
+}
 
-    render() {
-        const { data, found } = this.props;
-        return (
-            <div className="table-section">
-                {/* <p className="count">{found} total found</p> */}
-                <div className="control-pages">
-                    
-                </div>
-                <table className="book-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author Name</th>
-                            <th>First publish year</th>
-                            <th>Subject</th>
-                        </tr>
-                    </thead>
-                    <tbody className="book-body">
-                        {
-                            data.map(row => <BookRow data={row} />)
-                        }
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
+BookTable.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default BookTable;

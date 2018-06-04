@@ -1,19 +1,22 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 
 class SearchInput extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
-            inputValue: "the lord of the rings",
+            inputValue: "",
         }
     }
+
     changeValue = (e) => {
         const value = e.target.value;
         this.setState({
             inputValue: value,
         })
     }
+
     render() {
         const { handleClick } = this.props;
         return (
@@ -36,6 +39,10 @@ class SearchInput extends Component {
             </div>
         )
     }
+}
+
+SearchInput.propTypes = {
+    handleClick: PropTypes.func.isRequired,
 }
 
 export default SearchInput;
