@@ -1,10 +1,7 @@
-import React, { Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class TableRow extends Component {
-    render() {
-        const { data } = this.props;
-
+const TableRow = ({ data }) => {
         return (
            <tr>
                <th className="student-cell">{data.name}</th>
@@ -12,11 +9,15 @@ class TableRow extends Component {
                <th className="student-cell">{data.grade}</th>
            </tr>
         )
-    }
 }
 
 TableRow.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        age: PropTypes.number.isRequired,
+        grade: PropTypes.number.isRequired,
+    }).isRequired,
 }
 
 export default TableRow;

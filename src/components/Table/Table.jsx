@@ -1,11 +1,10 @@
-import React, { Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import TableRow from "./TableRow";
 import StudentHeader from "../StudentsTable/StudentHeader";
 
-class Table extends Component {
-    render() {
-        const {data, handleClick} = this.props;
+const Table = ({ data, handleClick }) => {
+        console.log(data);
         return (
             <table className="student-table">
                 <thead>
@@ -18,11 +17,10 @@ class Table extends Component {
                 </tbody>
             </table>
         );
-    }
 }
 
 Table.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.arrayOf(PropTypes.object).isRequired,
     handleClick: PropTypes.func.isRequired,
 }
 
